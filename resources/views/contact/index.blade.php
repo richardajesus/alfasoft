@@ -83,7 +83,7 @@
                                                             <td>@{{ contact.email }}</td>
                                                             <td>
                                                                 <a class="nav-link" :href="'contacts/' + contact.id" role="button">
-                                                                    <i class="fas fa-edit"></i>
+                                                                    <i class="fas fa-eye"></i>
                                                                 </a>
                                                             </td>
                                                         </tr>
