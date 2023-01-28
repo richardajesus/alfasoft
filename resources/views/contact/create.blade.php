@@ -31,15 +31,7 @@
                         <form method="post" action="{{ route('contact.store') }}">
                             @csrf
                             <div class="card-body">
-                                @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                @endif
+                                @include('includes.errors')
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input required type="text" class="form-control" value="{{ old('name') }}" name="name" placeholder="Enter name">
