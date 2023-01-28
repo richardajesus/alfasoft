@@ -89,6 +89,9 @@
                                                                     <a class="nav-link" :href="'contacts/' + contact.id + '/edit'" role="button">
                                                                         <i class="fas fa-edit"></i>
                                                                     </a>
+                                                                    <a class="nav-link" :href="'contacts/' + contact.id + '/delete'" role="button">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </a>
 
                                                                 </div>
                                                             </td>

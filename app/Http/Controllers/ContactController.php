@@ -68,4 +68,15 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('contact.show', $contact->id);
     }
+
+    public function delete($id) {
+        $contact = Contact::findOrFail($id);
+        return view('contact.delete', ['contact' => $contact]);
+    }
+
+    public function destroy($id) {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return view('contact.destroyed', ['contact' => $contact]);
+    }
 }

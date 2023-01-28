@@ -880,6 +880,8 @@
                 </ul>
 
                 <a href="{{ url()->previous() }}" class="btn btn-secondary"><b>Go back</b></a>
+                <a href="{{ route('contact.edit', ['id' => $contact->id]) }}" class="btn btn-primary"><b>Edit</b></a>
+                <a href="{{ route('contact.delete', ['id' => $contact->id]) }}" class="btn btn-danger"><b>Delete</b></a>
               </div>
               <!-- /.card-body -->
             </div>
