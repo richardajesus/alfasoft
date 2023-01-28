@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Contact::factory(15)->create();
+        \App\Models\Contact::factory(100)->create();
     }
 }
