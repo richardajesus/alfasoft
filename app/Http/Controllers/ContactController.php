@@ -26,4 +26,25 @@ class ContactController extends Controller
             'total' => Contact::count(),
         ]);
     }
+
+    public function show($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('contact.show', ['contact' => $contact]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'      => 'required|string|min:5',
+            'contact'   => 'required|integer|unique:contacts|digits:9',
+            'email'     => 'required|unique:contacts|email',
+        ]);
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->contact = $request->contact;
+        $contact->email = $request->email;
+        $contact->save();
+        return redirect()->route('contact.show', ['id' => $contact->id]);
+    }
 }

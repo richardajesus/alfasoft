@@ -49,6 +49,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Contact List</h3>
+                                    
                                     <div class="card-tools">
                                         <div class="input-group input-group-sm" style="width: 150px;">
                                             <input :disabled="loading" type="search" @keyup="search" v-model="filter" class="form-control float-right" placeholder="Search...">
@@ -57,6 +58,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
+                                <a href="{{ route('contact.create') }}" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> New</a>
                                     <div v-if="loading" class="d-flex justify-content-center">
                                         <div class="spinner-border" role="status">
                                             <span class="sr-only">Loading...</span>
