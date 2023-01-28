@@ -10,5 +10,7 @@ Route::prefix('contacts')->group(function () {
         Route::get('{id}', 'show')->name('contact.show')->where('id', '[0-9]+');
         Route::view('create', 'contact.create')->name('contact.create');
         Route::post('store', 'store')->name('contact.store');
+        Route::get('{id}/edit', 'edit')->name('contact.edit')->where('id', '[0-9]+');
+        Route::post('{id}/update', 'update')->name('contact.update')->where('id', '[0-9]+');
     });
 });

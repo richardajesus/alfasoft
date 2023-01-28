@@ -47,4 +47,25 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('contact.show', ['id' => $contact->id]);
     }
+
+    public function edit($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('contact.edit', ['contact' => $contact]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $contact = Contact::findOrFail($id);
+        $request->validate([
+            'name'      => 'required|string|min:5',
+            'contact'   => 'required|integer|digits:9|unique:contacts,contact,' . $id,
+            'email'     => 'required|email|unique:contacts,email,' . $id,
+        ]);
+        $contact->name = $request->name;
+        $contact->contact = $request->contact;
+        $contact->email = $request->email;
+        $contact->save();
+        return redirect()->route('contact.show', $contact->id);
+    }
 }

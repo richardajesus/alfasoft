@@ -82,9 +82,15 @@
                                                             <td>@{{ contact.contact }}</td>
                                                             <td>@{{ contact.email }}</td>
                                                             <td>
-                                                                <a class="nav-link" :href="'contacts/' + contact.id" role="button">
-                                                                    <i class="fas fa-eye"></i>
-                                                                </a>
+                                                                <div class="btn-group">
+                                                                    <a class="nav-link" :href="'contacts/' + contact.id" role="button">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
+                                                                    <a class="nav-link" :href="'contacts/' + contact.id + '/edit'" role="button">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -101,7 +107,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 col-md-5">
-                                                <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
+                                                <div role="status" aria-live="polite">
                                                     Showing @{{ (data.data.length > 0 ? ((data.current_page - 1) * perPage) + 1 : 0) }}
                                                     to
                                                     @{{ (data.total - (((data.current_page - 1) * perPage) + 1) > perPage ? perPage * data.current_page : data.total)}}

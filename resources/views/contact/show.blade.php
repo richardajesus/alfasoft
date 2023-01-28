@@ -879,7 +879,7 @@
                   </li>
                 </ul>
 
-                <a href="{{ route('contact.index') }}" class="btn btn-secondary"><b>Go back</b></a>
+                <a href="{{ url()->previous() }}" class="btn btn-secondary"><b>Go back</b></a>
               </div>
               <!-- /.card-body -->
             </div>
