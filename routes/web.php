@@ -3,6 +3,8 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+Route::redirect('', '/contacts');
+
 Route::prefix('contacts')->group(function () {
     Route::controller(ContactController::class)->group(function () {
         Route::get('paginate', 'index');

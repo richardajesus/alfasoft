@@ -16,7 +16,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-        @include('includes.nav')
+       
 
         @include('includes.aside')
 
@@ -28,6 +28,6 @@
     <!-- jQuery -->
     <script src="{{ asset('/AdminLTE-master/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('/AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('/AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>
