@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/');
+            return redirect()->intended('/');
         } else {
             return back()->withErrors(['email' => 'Invalid e-mail or password.']);
         }

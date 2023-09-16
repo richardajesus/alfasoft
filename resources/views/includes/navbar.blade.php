@@ -28,7 +28,7 @@
         </li>
         @else
         <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('auth.login') }}">
+            <a class="nav-link" href="{{ route('login') }}">
                 <i class="far fa-user"></i> Sig In
             </a>
         </li>
