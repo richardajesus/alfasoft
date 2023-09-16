@@ -26,7 +26,11 @@
         <div class="container-fluid">
             <div class="row justify-content-md-center">
                 <div class="col-md-6">
-
+                    @if(session('mensagem'))
+                    <div class="alert alert-success">
+                        {{ session('mensagem') }}
+                    </div>
+                    @endif
                     <!-- Profile Image -->
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
