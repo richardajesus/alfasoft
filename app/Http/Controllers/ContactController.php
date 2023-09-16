@@ -41,7 +41,7 @@ class ContactController extends Controller
         $contact->contact = $request->contact;
         $contact->email = $request->email;
         $contact->save();
-        session()->flash('mensagem', "User $contact->name has been created successfully.");
+        session()->flash('mensagem', "Contact $contact->name has been created successfully.");
         return redirect()->route('contact.show', ['contact' => $contact->id]);
     }
 
@@ -56,8 +56,7 @@ class ContactController extends Controller
         $contact->contact = $request->contact;
         $contact->email = $request->email;
         $contact->save();
-        session()->flash('mensagem', "User $contact->name has been created successfully.");
-        session()->flash('mensagem', "User $contact->name has been successfully updated");
+        session()->flash('mensagem', "Contact $contact->name has been successfully updated");
         return redirect()->route('contact.show', $contact->id);
     }
 
