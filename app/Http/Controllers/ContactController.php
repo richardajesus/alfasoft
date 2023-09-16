@@ -46,7 +46,7 @@ class ContactController extends Controller
 
     public function edit(Contact $contact)
     {
-        return view('contact.edit', ['contact' => $contact, 'imgUser' => $this->getProfilePicture()]);
+        return view('contact.edit', ['contact' => $contact]);
     }
 
     public function update(ContactRequest $request, Contact $contact)
@@ -56,6 +56,17 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->save();
         return redirect()->route('contact.show', $contact->id);
+    }
+
+    public function delete(Contact $contact)
+    {
+        return view('contact.delete', ['contact' => $contact]);
+    }
+
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+        return view('contact.destroyed', ['contact' => $contact]);
     }
 
     private function getProfilePicture()

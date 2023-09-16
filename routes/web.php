@@ -15,7 +15,7 @@ Route::controller(ContactController::class)->group(function () {
         Route::post('store', 'store')->name('contact.store');
         Route::get('{contact}/edit', 'edit')->name('contact.edit')->where('contact', '[0-9]+');
         Route::post('{contact}/update', 'update')->name('contact.update')->where('contact', '[0-9]+');
-        Route::get('{id}/delete', 'delete')->name('contact.delete')->where('id', '[0-9]+');
-        Route::get('{id}/destroy', 'destroy')->name('contact.destroy')->where('id', '[0-9]+');
+        Route::get('{contact}/delete', 'delete')->name('contact.delete')->where('contact', '[0-9]+');
+        Route::get('{contact}/destroy', 'destroy')->name('contact.destroy')->where('contact', '[0-9]+');
     });
 });
