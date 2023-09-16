@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -26,4 +27,22 @@ class ContactController extends Controller
             'total' => Contact::count(),
         ]);
     }
+
+    public function show(Contact $contact)
+    {
+        $gender = rand(0, 1) ? 'men' : 'women';
+        $id = mt_rand(1, 99);
+        $imgUser = "//randomuser.me/api/portraits/$gender/$id.jpg";
+        return view('contact.show', ['contact' => $contact, 'imgUser' => $imgUser]);
+    }
+
+    // public function store(ContactRequest $request)
+    // {
+    //     $contact = new Contact();
+    //     $contact->name = $request->name;
+    //     $contact->contact = $request->contact;
+    //     $contact->email = $request->email;
+    //     $contact->save();
+    //     return redirect()->route('contact.show', ['id' => $contact->id]);
+    // }
 }
