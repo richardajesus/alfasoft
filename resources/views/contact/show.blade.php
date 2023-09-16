@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('contact.index') }}">Contact</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('contact.index') }}">Contacts</a></li>
                         <li class="breadcrumb-item active">Show</li>
                     </ol>
                 </div>
@@ -51,17 +51,17 @@
                                 </li>
                             </ul>
 
-                            <a href="{{ url()->previous() }}" class="btn btn-secondary">
+                            <a href="{{ route('contact.index') }}" class="btn btn-secondary">
                                 <i class="fas fa-chevron-left"></i>
-                                <b> Go back</b>
+                                Go back
                             </a>
-                            <a href="{{ route('contact.edit', ['id' => $contact->id]) }}" class="btn btn-primary">
+                            <a href="{{ route('contact.edit', ['contact' => $contact->id]) }}" class="btn btn-primary">
                                 <i class="fas fa-edit"></i>
-                                <b> Edit</b>
+                                Edit
                             </a>
                             <a href="{{ route('contact.delete', ['id' => $contact->id]) }}" class="btn btn-danger">
                                 <i class="fas fa-trash"></i>
-                                <b>Delete</b>
+                                Delete
                             </a>
                         </div>
                         <!-- /.card-body -->

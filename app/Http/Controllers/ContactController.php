@@ -30,19 +30,38 @@ class ContactController extends Controller
 
     public function show(Contact $contact)
     {
-        $gender = rand(0, 1) ? 'men' : 'women';
-        $id = mt_rand(1, 99);
-        $imgUser = "//randomuser.me/api/portraits/$gender/$id.jpg";
-        return view('contact.show', ['contact' => $contact, 'imgUser' => $imgUser]);
+
+        return view('contact.show', ['contact' => $contact, 'imgUser' => $this->getProfilePicture()]);
     }
 
-    // public function store(ContactRequest $request)
-    // {
-    //     $contact = new Contact();
-    //     $contact->name = $request->name;
-    //     $contact->contact = $request->contact;
-    //     $contact->email = $request->email;
-    //     $contact->save();
-    //     return redirect()->route('contact.show', ['id' => $contact->id]);
-    // }
+    public function store(ContactRequest $request)
+    {
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->contact = $request->contact;
+        $contact->email = $request->email;
+        $contact->save();
+        return redirect()->route('contact.show', ['contact' => $contact->id]);
+    }
+
+    public function edit(Contact $contact)
+    {
+        return view('contact.edit', ['contact' => $contact, 'imgUser' => $this->getProfilePicture()]);
+    }
+
+    public function update(ContactRequest $request, Contact $contact)
+    {
+        $contact->name = $request->name;
+        $contact->contact = $request->contact;
+        $contact->email = $request->email;
+        $contact->save();
+        return redirect()->route('contact.show', $contact->id);
+    }
+
+    private function getProfilePicture()
+    {
+        $gender = rand(0, 1) ? 'men' : 'women';
+        $id = mt_rand(1, 99);
+        return "//randomuser.me/api/portraits/$gender/$id.jpg";
+    }
 }

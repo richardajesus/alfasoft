@@ -13,8 +13,8 @@ Route::controller(ContactController::class)->group(function () {
         Route::get('paginate', 'index');
         Route::get('{contact}', 'show')->name('contact.show')->where('contact', '[0-9]+');
         Route::post('store', 'store')->name('contact.store');
-        Route::get('{id}/edit', 'edit')->name('contact.edit')->where('id', '[0-9]+');
-        Route::post('{id}/update', 'update')->name('contact.update')->where('id', '[0-9]+');
+        Route::get('{contact}/edit', 'edit')->name('contact.edit')->where('contact', '[0-9]+');
+        Route::post('{contact}/update', 'update')->name('contact.update')->where('contact', '[0-9]+');
         Route::get('{id}/delete', 'delete')->name('contact.delete')->where('id', '[0-9]+');
         Route::get('{id}/destroy', 'destroy')->name('contact.destroy')->where('id', '[0-9]+');
     });
