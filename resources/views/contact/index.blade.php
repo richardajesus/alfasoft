@@ -60,13 +60,13 @@
                                                     <td>@{{ contact.email }}</td>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a class="nav-link" :href="'contacts/' + contact.id" role="button">
+                                                            <a class="nav-link" :href="'/contacts/' + contact.id" role="button">
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
-                                                            <a class="nav-link" :href="'contacts/' + contact.id + '/edit'" role="button">
+                                                            <a class="nav-link" :href="'/contacts/' + contact.id + '/edit'" role="button">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
-                                                            <a class="nav-link" :href="'contacts/' + contact.id + '/delete'" role="button">
+                                                            <a class="nav-link" :href="'/contacts/' + contact.id + '/delete'" role="button">
                                                                 <i class="fas fa-trash"></i>
                                                             </a>
 

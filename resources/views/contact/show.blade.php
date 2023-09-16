@@ -59,7 +59,7 @@
                                 <i class="fas fa-edit"></i>
                                 Edit
                             </a>
-                            <a href="{{ route('contact.delete', ['id' => $contact->id]) }}" class="btn btn-danger">
+                            <a href="{{ route('contact.delete', ['contact' => $contact->id]) }}" class="btn btn-danger">
                                 <i class="fas fa-trash"></i>
                                 Delete
                             </a>
