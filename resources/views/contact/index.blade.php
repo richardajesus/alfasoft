@@ -23,9 +23,9 @@
         <div class="container-fluid">
             <div class="row" id="app">
                 <div class="col-12">
-                    @if(session('mensagem'))
+                    @if(session('message'))
                     <div class="alert alert-success">
-                        {{ session('mensagem') }}
+                        {{ session('message') }}
                     </div>
                     @endif
                     <div class="card">
@@ -52,9 +52,30 @@
                                         <table class="table table-hover text-nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th @click="sortChanged('name')" style="cursor: pointer">Name &#x21D5;</th>
-                                                    <th @click="sortChanged('contact')" style="cursor: pointer">Contact &#x21D5;</th>
-                                                    <th @click="sortChanged('email')" style="cursor: pointer">E-mail &#x21D5;</th>
+                                                    <th @click="sortChanged('name')" style="cursor: pointer">
+                                                        <div class="d-flex">
+                                                            <div v-show="sortBy == 'name'" class="mr-2">
+                                                                <i v-if="sortDesc" class="fas fa-chevron-up"></i>
+                                                                <i v-else class="fas fa-chevron-down"></i>
+                                                            </div>Name
+                                                        </div>
+                                                    </th>
+                                                    <th @click="sortChanged('contact')" style="cursor: pointer">
+                                                        <div class="d-flex">
+                                                            <div v-show="sortBy == 'contact'" class="mr-2">
+                                                                <i v-if="sortDesc" class="fas fa-chevron-up"></i>
+                                                                <i v-else class="fas fa-chevron-down"></i>
+                                                            </div>Contato
+                                                        </div>
+                                                    </th>
+                                                    <th @click="sortChanged('email')" style="cursor: pointer">
+                                                        <div class="d-flex">
+                                                            <div v-show="sortBy == 'email'" class="mr-2">
+                                                                <i v-if="sortDesc" class="fas fa-chevron-up"></i>
+                                                                <i v-else class="fas fa-chevron-down"></i>
+                                                            </div>Name
+                                                        </div>
+                                                    </th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>

@@ -28,8 +28,7 @@ class AuthController extends Controller
         $user->password = $request->password;
         $user->save();
         Auth::login($user);
-        session()->flash('mensagem', "You are logged in.");
-        return redirect('/');
+        return redirect()->intended('/');
     }
 
     public function logout(Request $request)

@@ -26,9 +26,9 @@
         <div class="container-fluid">
             <div class="row justify-content-md-center">
                 <div class="col-md-6">
-                    @if(session('mensagem'))
+                    @if(session('message'))
                     <div class="alert alert-success">
-                        {{ session('mensagem') }}
+                        {{ session('message') }}
                     </div>
                     @endif
                     <!-- Profile Image -->

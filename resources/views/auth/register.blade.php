@@ -27,7 +27,7 @@
                 <form action="{{ route('auth.register') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="Full name" value="{{ old('name') }}">
+                        <input type="text" required name="name" class="form-control" placeholder="Full name" value="{{ old('name') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="E-mail" value="{{ old('email') }}">
+                        <input type="email" required name="email" class="form-control" placeholder="E-mail" value="{{ old('email') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" required name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password_confirmation" class="form-control" placeholder="Retype password">
+                        <input type="password" required name="password_confirmation" class="form-control" placeholder="Retype password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

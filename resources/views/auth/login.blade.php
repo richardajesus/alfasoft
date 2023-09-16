@@ -32,7 +32,7 @@
                 <form action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="E-mail">
+                        <input type="email" required name="email" value="{{ old('email') }}" class="form-control" placeholder="E-mail">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" required name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
