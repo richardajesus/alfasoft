@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        sleep(1); // purposely delay
+        usleep(300000); // purposely delay
         $sortBy = $request->sortBy ?? 'name';
         $sort = $request->sort ?? 'ASC';
         $contacts = Contact::orderBy($sortBy, $sort);
