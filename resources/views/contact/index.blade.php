@@ -60,16 +60,17 @@
                                                     <td>@{{ contact.email }}</td>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a class="nav-link" :href="'/contacts/' + contact.id" role="button">
-                                                                <i class="fas fa-eye"></i>
-                                                            </a>
-                                                            <a class="nav-link" :href="'/contacts/' + contact.id + '/edit'" role="button">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                            <a class="nav-link" :href="'/contacts/' + contact.id + '/delete'" role="button">
-                                                                <i class="fas fa-trash"></i>
-                                                            </a>
-
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-info" @click="window.location.href = '/contacts/' + contact.id" title="Show">
+                                                                    <i class="fas fa-eye"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-success" @click="window.location.href = '/contacts/' + contact.id + '/edit'" title="Edit">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-danger" @click="window.location.href = '/contacts/' + contact.id + '/delete'" title="Delete">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -170,7 +171,6 @@
                         })
                         .then(
                             response => {
-                                console.log(response.body)
                                 this.data = response.body.data
                                 this.total = response.body.total
                                 this.loading = false
