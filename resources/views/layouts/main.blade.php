@@ -15,9 +15,9 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        
+
         @include('includes.navbar')
-        
+
         @include('includes.aside')
 
         @yield('content')
@@ -29,6 +29,18 @@
     <script src="{{ asset('/AdminLTE-master/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script>
+        const btnToggleSisebar = document.getElementById('btnToggleSisebar');
+
+        btnToggleSisebar.addEventListener('click', () => {
+            const body = document.body;
+            if (body.classList.contains('sidebar-collapse')) {
+                body.classList.remove('sidebar-collapse');
+            } else {
+                body.classList.add('sidebar-collapse');
+            }
+        });
+    </script>
 </body>
 
 </html>
